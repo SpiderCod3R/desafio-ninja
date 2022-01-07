@@ -1,0 +1,33 @@
+version: '3'
+services:
+  db:
+    image: postgres:12-alpine
+    env_file:
+      - .db.env
+    ports:
+      - 5432:5432
+    volumes:
+      - desafio_ninja_db:/var/lib/postgresql/data
+  
+  app:
+    build: .
+    container_name: desafio_ninja_rails
+    command:  bash start.sh
+    ports:
+      - 5000:5000
+    volumes:
+      - '.:/DESAFIO-NINJA'
+    environment:
+      - .db.env
+    depends_on:
+      - db
+
+  box:
+    image: busybox
+    volumes:
+      - /box
+    
+volumes:
+  desafio_ninja_db:
+  db:
+  box:
