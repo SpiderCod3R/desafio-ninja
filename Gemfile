@@ -28,6 +28,12 @@ gem 'bootsnap', '>= 1.4.4', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+
+  gem 'rspec-rails', '~> 5.0', '>= 5.0.2'
+  gem 'factory_bot_rails', '~> 6.2'
+  gem 'shoulda-matchers', '~> 5.1'
+  gem 'airborne', '~> 0.3.7' # RSpec driven API testing framework
+  gem 'database_cleaner', '~> 2.0', '>= 2.0.1' # Strategies for cleaning databases. Can be used to ensure a clean slate for testing
 end
 
 group :development do
