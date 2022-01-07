@@ -5,7 +5,7 @@ services:
     env_file:
       - .db.env
     ports:
-      - 5432:5432
+      - 5433:5433
     volumes:
       - desafio_ninja_db:/var/lib/postgresql/data
   
@@ -16,18 +16,14 @@ services:
     ports:
       - 5000:5000
     volumes:
-      - '.:/DESAFIO-NINJA'
+      - '.:/ninja_challenge'
+      - bundler_gems:/usr/local/bundle/
     environment:
       - .db.env
     depends_on:
       - db
 
-  box:
-    image: busybox
-    volumes:
-      - /box
-    
 volumes:
-  desafio_ninja_db:
   db:
-  box:
+  desafio_ninja_db:
+  bundler_gems:

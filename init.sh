@@ -17,4 +17,4 @@ docker-compose build
 docker-compose run --rm app bundle install
 
 #Para Entrar no bash do Service
-docker-compose run --service-ports app bash
+#docker-compose run --service-ports app bash
