@@ -33,6 +33,11 @@ COPY Gemfile.lock Gemfile.lock
 RUN gem install bundler
 RUN bundle install
 
+# EXECUTA TODA VEZ QUE O CONTAINER SE INICIA E CORRIGE O PROBLEMA DO SERVER.PID
+COPY entrypoint.sh /usr/bin/
+RUN chmod +x /usr/bin/entrypoint.sh
+ENTRYPOINT ["entrypoint.sh"]
+
 # SETA A PORTA DE EXECUÇÃO DA APLICACAÇÃO
 EXPOSE 5000
 
