@@ -28,6 +28,14 @@ gem 'rack-cors'
 # A plugin for versioning Rails based RESTful APIs.
 gem 'versionist', '~> 2.0', '>= 2.0.1'
 
+# A set of responders modules to dry up your Rails app.
+gem 'responders', '~> 3.0.1'
+
+# ActiveModel::Serializers 
+# allows you to generate your JSON in an 
+# object-oriented and convention-driven manner.
+gem 'active_model_serializers', '~> 0.10.12'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
